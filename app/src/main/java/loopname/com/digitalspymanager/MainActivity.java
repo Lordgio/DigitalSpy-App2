@@ -15,12 +15,10 @@ public class MainActivity extends AppCompatActivity {
     EditText emailRegistro;
     EditText contraseñaRegistro;
     EditText contraseñaRegistro2;
-    EditText nombre;
 
     LinearLayout inicio;
     LinearLayout registro;
     LinearLayout paso1;
-    LinearLayout paso2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         emailRegistro=(EditText)this.findViewById(R.id.emailRegistro);
         contraseñaRegistro=(EditText)this.findViewById(R.id.contraseñaRegistro);
         contraseñaRegistro2=(EditText)this.findViewById(R.id.contraseñaRegistro2);
-        nombre=(EditText)this.findViewById(R.id.nombreDispositivo);
 
         paso1=(LinearLayout)this.findViewById(R.id.Paso1);
         paso1.setVisibility(View.VISIBLE);
@@ -41,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
         registro=(LinearLayout)this.findViewById(R.id.LayoutRegistro);
         inicio.setVisibility(View.GONE);
         registro.setVisibility(View.GONE);
-        paso2=(LinearLayout)this.findViewById(R.id.Paso2);
-        paso2.setVisibility(View.GONE);
     }
 
     public void iniciarSesion(View v){
@@ -56,14 +51,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void siguientePaso(View v){
-        paso1.setVisibility(View.GONE);
-        paso2.setVisibility(View.VISIBLE);
-    }
-
-    public void saltarProceso(View v){
 
         Intent intent=new Intent(this,StartActivity.class);
-        intent.putExtra("nombre",nombre.getText().toString());
         this.startActivity(intent);
     }
 }
